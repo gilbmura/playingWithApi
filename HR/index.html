@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gilbert</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="gil-navbar">
+        <ul class="gil-nav-links">
+            <li><button class="gil-theme" id="themeChange">
+                <i class="moon-icon"></i>
+            </button></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="gil-projects">
+            <h2>Github Repo Finder</h2>
+
+            <div class="gil-search-container">
+                <div class="gil-search-box">
+                    <input type="text" id="usernameInput" placeholder="Enter GitHub username..." value="">
+                    <button id="searchBtn" class="gil-search-btn">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+                <div class="gil-current-user" id="currentUser">
+                    <i class="fab fa-github"></i> @
+                </div>
+            </div>
+            
+            <div class="gil-github-projects container">
+                
+                <div class="gil-loader" id="githubLoader">
+                    <div class="gil-spinner"></div>
+                    <p>Loading repositories...</p>
+                </div>
+                
+                <div class="gil-github-repos" id="githubRepos"></div>
+                
+                <div class="gil-load-more-container" id="loadMoreContainer" style="display: none;">
+                    <button id="loadMoreBtn" class="gil-load-more-btn">
+                        <i class="fas fa-plus"></i> Load More Repositories
+                    </button>
+                </div>
+                
+                <div class="gil-error-message" id="githubError" style="display: none;">
+                    <p><i class="fas fa-exclamation-circle"></i> Unable to load GitHub repositories. Please try again later.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="gil-socials">
+            <a href="https://github.com/gilbmura" target="_blank"><i class="gil-github"></i></a>
+            <a href="https://www.linkedin.com/in/gilbert-muramira/" target="_blank"><i class="gil-linkedin"></i></a>
+            <a href="https://x.com/GMuramira" target="_blank"><i class="gil-twitter"></i></a>
+        </div>
+        <p>&copy; 2025 Gilbert Muramirabagabo. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="github.js"></script>
+</body>
+</html> 

@@ -1,0 +1,484 @@
+:root {
+    --bg-primary: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --accent-color: #007AFF;
+    --accent-color-rgb: 0, 122, 255;
+    --accent-hover: #0056b3;
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --card-bg: #ffffff;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --footer-bg: #2c3e50;
+    --footer-text: #ecf0f1;
+    --border-color: #e1e5e9;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --accent-color: #4dabf7;
+    --accent-color-rgb: 77, 171, 247;
+    --accent-hover: #339af0;
+    --nav-bg: rgba(26, 26, 26, 0.95);
+    --card-bg: #2d2d2d;
+    --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --footer-bg: #1a242f;
+    --border-color: #404040;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+    transition: background-color 0.3s, color 0.3s;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Navigation */
+.gil-navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.gil-nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.gil-theme {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-primary);
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.gil-theme:hover {
+    background-color: rgba(var(--accent-color-rgb), 0.1);
+}
+
+.moon-icon {
+    display: inline-block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Cpath d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'%3E%3C/path%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+[data-theme="dark"] .moon-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='5'%3E%3C/circle%3E%3Cline x1='12' y1='1' x2='12' y2='3'%3E%3C/line%3E%3Cline x1='12' y1='21' x2='12' y2='23'%3E%3C/line%3E%3Cline x1='4.22' y1='4.22' x2='5.64' y2='5.64'%3E%3C/line%3E%3Cline x1='18.36' y1='18.36' x2='19.78' y2='19.78'%3E%3C/line%3E%3Cline x1='1' y1='12' x2='3' y2='12'%3E%3C/line%3E%3Cline x1='21' y1='12' x2='23' y2='12'%3E%3C/line%3E%3Cline x1='4.22' y1='19.78' x2='5.64' y2='18.36'%3E%3C/line%3E%3Cline x1='18.36' y1='5.64' x2='19.78' y2='4.22'%3E%3C/line%3E%3C/svg%3E");
+}
+
+/* Projects Section */
+.gil-projects {
+    padding: 100px 2rem 2rem;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Search Container */
+.gil-search-container {
+    max-width: 500px;
+    margin: 0 auto 3rem;
+}
+
+.gil-search-box {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+#usernameInput {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+#usernameInput:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.gil-search-btn {
+    padding: 0.8rem 1.5rem;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.gil-search-btn:hover {
+    background: var(--accent-hover);
+}
+
+.gil-current-user {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(var(--accent-color-rgb), 0.1);
+    color: var(--accent-color);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Language Statistics */
+.gil-language-stats {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem auto;
+    box-shadow: var(--card-shadow);
+    max-width: 800px;
+    text-align: left;
+}
+
+.gil-language-stats h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--accent-color);
+    font-size: 1.4rem;
+}
+
+.gil-language-list {
+    display: grid;
+    gap: 1rem;
+}
+
+.gil-language-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.gil-language-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.gil-language-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.gil-language-name {
+    font-weight: 500;
+    flex: 1;
+}
+
+.gil-language-percentage {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    min-width: 50px;
+    text-align: right;
+}
+
+.gil-language-bar {
+    height: 8px;
+    background: var(--border-color);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.gil-language-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+/* GitHub Repositories */
+.gil-github-repos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.gil-github-repo {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+
+.gil-github-repo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.gil-repo-name a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.gil-repo-description {
+    color: var(--text-secondary);
+    margin: 1rem 0;
+    min-height: 2.5rem;
+    line-height: 1.5;
+}
+
+/* Repository Languages */
+.gil-repo-languages {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: rgba(var(--accent-color-rgb), 0.02);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.gil-language-breakdown {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.gil-repo-language-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+}
+
+.gil-language-text {
+    flex: 1;
+    font-weight: 500;
+}
+
+.gil-language-percent {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    min-width: 45px;
+    text-align: right;
+}
+
+.gil-language-progress {
+    display: flex;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--border-color);
+}
+
+.gil-progress-segment {
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.gil-progress-segment:hover {
+    opacity: 0.8;
+}
+
+.gil-repo-meta, .gil-repo-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0.8rem 0;
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+}
+
+.gil-repo-updated, .gil-repo-stars, .gil-repo-forks, .gil-repo-size {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.gil-repo-topics {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.gil-repo-topic {
+    background: rgba(var(--accent-color-rgb), 0.1);
+    color: var(--accent-color);
+    padding: 0.3rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+/* Load More Button */
+.gil-load-more-container {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+.gil-load-more-btn {
+    padding: 1rem 2rem;
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.gil-load-more-btn:hover:not(:disabled) {
+    background: var(--accent-hover);
+}
+
+.gil-load-more-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Loader */
+.gil-loader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem;
+}
+
+.gil-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(var(--accent-color-rgb), 0.1);
+    border-left-color: var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 1rem;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Error and No Repos */
+.gil-error-message, .gil-no-repos {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-secondary);
+}
+
+.gil-error-message {
+    color: #dc3545;
+    background: rgba(220, 53, 69, 0.1);
+    border-radius: 8px;
+}
+
+/* Footer */
+footer {
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 2rem;
+    text-align: center;
+    margin-top: auto;
+}
+
+.gil-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.gil-socials a {
+    color: var(--footer-text);
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.gil-socials a:hover {
+    color: var(--accent-color);
+}
+
+.gil-github::before { font-family: 'Font Awesome 6 Brands'; content: '\f09b'; }
+.gil-linkedin::before { font-family: 'Font Awesome 6 Brands'; content: '\f08c'; }
+.gil-twitter::before { font-family: 'Font Awesome 6 Brands'; content: '\f099'; }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .gil-github-repos { 
+        grid-template-columns: 1fr; 
+        gap: 1.5rem;
+    }
+    .gil-projects { padding: 80px 1rem 2rem; }
+    h2 { font-size: 2rem; }
+    
+    .gil-search-box {
+        flex-direction: column;
+    }
+    
+    .gil-search-btn {
+        padding: 0.8rem;
+    }
+    
+    .gil-language-breakdown {
+        gap: 0.3rem;
+    }
+    
+    .gil-repo-language-item {
+        font-size: 0.85rem;
+    }
+    
+    .gil-language-stats {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .gil-github-repo {
+        padding: 1rem;
+    }
+    
+    .gil-repo-name a {
+        font-size: 1.1rem;
+    }
+    
+    .gil-repo-languages {
+        padding: 0.8rem;
+    }
+} 
