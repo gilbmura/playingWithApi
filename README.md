@@ -87,7 +87,7 @@ When you search for a user, you'll see:
 
 ## 🚀 Quick Start
 
-### Simple Setup (Recommended for Development)
+### Development Setup
 
 1. **Clone the repository:**
    ```bash
@@ -95,17 +95,8 @@ When you search for a user, you'll see:
    cd playingWithApi
    ```
 
-2. **Build and run with Docker:**
-   ```bash
-   docker build -t github-repo-finder .
-   docker run -p 8080:80 github-repo-finder
-   ```
-
-3. **Open your browser:**
-   Navigate to `http://localhost:8080` and start exploring GitHub repositories!
-
-### Alternative: Direct File Access
-You can also open `HR/index.html` directly in your browser for development, though some features may be limited due to CORS policies.
+2. **Open the application:**
+   You can open `HR/index.html` directly in your browser for quick development and testing.
 
 ## 🏗️ Production Deployment with Load Balancer
 
