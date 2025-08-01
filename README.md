@@ -427,10 +427,5 @@ This project showcases my expertise in modern web development, API integration, 
 
 ---
 
-## 🚀 Ready to Explore?
-
-Try the GitHub Repository Finder today and discover the power of beautiful data visualization combined with efficient API integration!
-
-**Quick Start**: `docker run -p 8080:80 github-repo-finder` and visit `http://localhost:8080`
 
 Happy coding! 🎉
