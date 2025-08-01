@@ -121,18 +121,8 @@ Steps to complete the activity:
    # stats socket /run/haproxy/admin.sock mode 660 level admin
    ```
    
-   Example configuration snippet:
+   add this configuration at the end of the .cfg:
    ```
-   global
-       daemon
-       maxconn 256
-
-   defaults
-       mode http
-       timeout connect 5s
-       timeout client  50s
-       timeout server  50s
-
    frontend http-in
        bind *:80
        default_backend servers
